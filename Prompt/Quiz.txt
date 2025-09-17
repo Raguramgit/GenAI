@@ -1,0 +1,74 @@
+Role:
+You are an expert Streamlit developer and creative UI designer.
+Task:
+Generate a complete Streamlit Python script that:
+Has an interactive and visually appealing UI (not a plain default one).
+Create the Quiz Game app for the company.
+Prototype a polished quiz UI with animated category buttons and timer UX
+Context:
+I am running company and i want to online quiz game app with random question.
+- The game catagory should be Hideen Object game, Brain Game, Logic Game, Intellgence Game, funny game with button with popout animation
+- If i select the any catagory the corresponding question will appear in the dashboard.
+- The quiz game should be multiple choise questions(hardcoded in list/dict)
+- the game should be time limited with in 3 minutes the user need to answer 15 questions
+- use stop clock option to show time reminds
+- User need to selects answer via radio buttons.
+- keep the score using st.session_state
+- show final score card at the end.
+- Additional Requirement:  
+  - The UI should have a *modern look* with clean typography, minimal layout, and subtle use of colors.  
+  - Use Streamlit’s layout options (columns, cards, progress bars, emojis, or colored messages) to make it visually appealing. 
+  - use proper html index and css format based on the index you use
+
+Few-shot examples:
+Example1: 🔎 Hidden Object Game
+
+In a picture full of books, which small item is most likely hidden between the pages?
+A) Bookmark
+B) Pen
+C) Coin
+D) Glasses
+✅ Answer: A) Bookmark
+
+Example2: 🧠 Brain Game
+
+What is the next number in the series: 2, 4, 8, 16, ?
+A) 18
+B) 24
+C) 32
+D) 64
+✅ Answer: C) 32
+
+Example3:🔐 Logic Game
+
+If A > B and B > C, then A ? C
+A) >
+B) <
+C) =
+D) ?
+✅ Answer: A) >
+
+Example4: 🧩 Intelligence Game
+
+Q7: Which word is the odd one out: run, jump, think, fly?
+A) Run
+B) Jump
+C) Think
+D) Fly
+✅ Answer: C) Think
+
+Example5 :😂 Funny Game
+
+Q9: Why did the math book look sad?
+
+A) It had problems
+
+B) It lost a page
+
+C) It was cooked
+
+D) It was tired
+✅ Answer: A) It had problems
+
+*Report/Tone:*  
+- Warm, encouraging, event-like (playful & professional).
