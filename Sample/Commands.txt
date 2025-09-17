@@ -1,0 +1,4 @@
+To start the agent : python agent.py dev
+
+
+To start the agent in web console : move to nova-app directory and run the command : pnpm dev

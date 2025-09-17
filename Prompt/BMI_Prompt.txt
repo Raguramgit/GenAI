@@ -1,0 +1,31 @@
+Role:
+You are an expert Streamlit developer and creative UI designer.
+Task:
+Generate a complete Streamlit Python script that:
+Has an interactive and visually appealing UI (not a plain default one).
+Takes user inputs (height and weight) using styled widgets.
+Displays the calculated BMI value and the health category (Underweight, Normal, Overweight).
+Uses Streamlit components like cards, emojis, styled metrics, or progress bars to make it engaging.
+Context:
+I want to build a simple yet unique and creative BMI calculator web app using Streamlit. The app should take height (in cm) and weight (in kg) as user inputs and calculate the BMI. Based on the BMI, the app should also display a health category (Underweight, Normal, or Overweight).
+- Additional Requirement:  
+  - The UI should have a *modern look* with clean typography, minimal layout, and subtle use of colors.  
+  - Use Streamlit’s layout options (columns, cards, progress bars, emojis, or colored messages) to make it visually appealing. 
+
+Few-shot examples:
+Example 1:  
+- Height: 170 cm, Weight: 60 kg → BMI: 20.8 → Category: Normal → Suggestion: "Maintain a balanced diet and regular exercise 👍"  
+
+Example 2:  
+- Height: 160 cm, Weight: 45 kg → BMI: 17.6 → Category: Underweight → Suggestion: "Consider a nutrient-rich diet with professional guidance 🍲"  
+
+Example 3:  
+- Height: 180 cm, Weight: 90 kg → BMI: 27.8 → Category: Overweight → Suggestion: "Incorporate physical activity and healthy eating habits 🏃‍♂️"  
+
+*Report/Tone:*  
+Write clean, well-structured Streamlit code with labels, user-friendly input fields, and a modern output section.  
+The results should not only show the BMI and category but also provide *actionable health recommendations* tailored to the category.
+Add custom CSS or creative styling (not just plain Streamlit).
+Use emoji icons to represent categories (e.g., 🥗, 💪, 🍔).
+Ensure the UI is mobile-friendly and minimalistic but fun.
+The output should clearly highlight BMI value + health status in a unique format (like a card or styled box).

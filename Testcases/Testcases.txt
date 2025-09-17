@@ -1,0 +1,98 @@
+Role:
+You are an expert Streamlit developer and creative UI designer.
+
+Task:
+The application tracks employee allocations across multiple global accounts, supported by the shared services team, and stores required personnel information and billable/non‑billable FTEs.
+
+Context:
+Employee Master Record: Allow owners to add, modify, or delete employees’ records, including allocated billed and unbilled information across supported accounts
+
+Dashboard and Reporting: Visual dashboard showing total employees, total customers, active vs. resigned, band-wise counts, gender distribution, technology-tower wise employee total count , grad wise, distribution, billed vs. unbilled totals, project-wise billed counts, and monthly counts of resignations, releases, and new joiners
+
+Account Onboarding: Allow owners to onboard a new customer in the application by adding the project name, multiple Project codes, and finance ID, along with delivery stakeholder details
+
+Notifications: Send email notifications to employees, reporting managers, and account SDMs when information changes in the Employee Allocation System
+
+Import/Export Reports: Bulk data import/export in excel with customizable columns
+
+Admin Module: Manage and configure role-based access control for read/write permissions to employee master data and the dashboard
+
+Monthly Lifecycle Tracking: Lists and filters for new joiners, planned releases, and resignations by month, with export capability
+
+Audit Trail: Immutable history of create/update/delete actions and allocation changes, including user identity and timestamps
+
+
+Few-shot examples:
+Few-shot Examples
+Example 1: Employee Master Record
+
+Input: Add new employee John Smith with details: Band: B2, Technology: Java, Gender: Male, Customer: ABC Corp, Allocation: Billable, Project Code: ABC123.
+
+Expected Output: Employee John Smith created successfully with allocation details under ABC Corp (Project: ABC123, Billable FTE = 1).
+
+Example 2: Dashboard and Reporting
+
+Input: Show dashboard for September 2025.
+
+Expected Output: Dashboard summary →
+
+Total Employees: 524
+
+Active: 512 | Resigned: 12
+
+Band-wise: B1: 120, B2: 210, B3: 194
+
+Gender: Male: 320, Female: 204
+
+Technology Tower: Java: 150, SAP: 120, Cloud: 254
+
+Billed: 400 | Unbilled: 112
+
+Project-wise billed: Top 3 → Project Alpha: 120, Project Beta: 95, Project Gamma: 85
+
+Monthly lifecycle: New Joiners: 15, Releases: 8, Resignations: 5
+
+Example 3: Account Onboarding
+
+Input: Onboard new customer XYZ Global with Project Name: CloudOps Revamp, Project Codes: XYZ1001, XYZ1002, Finance ID: FINX987, Stakeholder: Jane Doe.
+
+Expected Output: New account XYZ Global – CloudOps Revamp created with 2 project codes and linked stakeholder Jane Doe.
+
+Example 4: Notifications
+
+Input: Update allocation of employee Alice Johnson from Unbilled to Billable (Project Code: FIN123).
+
+Expected Output: Allocation updated. Email notification sent to Alice Johnson, Reporting Manager: Mark Lee, and Account SDM: Priya R.
+
+Example 5: Import/Export Reports
+
+Input: Import employee data for Batch Sept-2025 from Excel (with 50 records).
+
+Expected Output: 50 employee records imported successfully. Validation errors: 2 (missing Project Code, invalid Finance ID).
+
+Example 6: Admin Module
+
+Input: Assign Dashboard Admin role to user Suresh Kumar.
+
+Expected Output: User Suresh Kumar granted role Dashboard Admin with read/write access to dashboard reports.
+
+Example 7: Monthly Lifecycle Tracking
+
+Input: Show planned releases for October 2025.
+
+Expected Output: 12 employees planned for release. Export available in Excel format.
+
+Example 8: Audit Trail
+
+Input: View audit trail for employee John Smith.
+
+Expected Output:
+
+2025-09-10 11:20 → Created by Admin01
+
+2025-09-15 16:35 → Updated allocation from Unbilled → Billable by HR_Manager
+
+2025-09-17 09:12 → Role access changed by Sys_Admin 
+
+*Report/Tone:*  
+Working, configurable application with an admin console and clear visualizations, such as dashboards and screens, to monitor employees’ billable and unbilled information across multiple accountsvisually appealing. 

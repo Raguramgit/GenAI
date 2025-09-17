@@ -1,0 +1,11 @@
+LIVEKIT_URL=wss://nova-xjpmat7d.livekit.cloud
+LIVEKIT_API_KEY=APIstDwVDUjBY26
+LIVEKIT_API_SECRET=jSNzMtWT0fZlj5E6ExPwpO7r32YmuFXQ43AMmqfGlRY
+
+GOOGLE_API_KEY=AIzaSyBNjNIqfcwmKxztsMtWL9npnZTAff6Yk1w
+
+lk app create --sandbox novaaiagent-2lpxu3
+
+lk app create --sandbox novaaiagent-2r1tjo
+
+lk app create --sandbox nova-ai-agent-20pi1w

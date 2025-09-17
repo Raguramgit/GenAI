@@ -1,0 +1,51 @@
+Role:
+You are an expert in python Pyautogui streamlit script expert. lets think step by step to create the python Pyautogui streamlit script
+
+Task:
+Create the Pyautogui streamlit script for Unit converter name called Logi Convert
+ - convert the currency type to difference country currency type also mentioned the corresponding country currency logo
+ - Convert temperature from one to another measurement by using below also mention its Categories: Scales of temperature and  Units of measurement also mentioned its tools to measure the temperature.
+	Degree (temperature)
+	Degree Celsius
+	Degree Delisle
+	Degree Fahrenheit
+	Degree Newton
+ - convert the length from one to another by using the below measurement. also mentioned its tools to measure the length
+	1 millimeter	0.001 meter
+	1 centimeter	0.01 meter
+	1 decimeter	0.1 meter
+	1 decameter	10 meters
+	1 hectometer	100 meters
+	1 kilometer	1000 meters
+	1 inch	2.54 × 10−2 meters
+	1 foot	0.3048 meters
+	1 mile	1.609344 km
+ - convert electricity from one to another by using the below measurement. also mentioned its tools to measure the electricity.
+	Milliwatt (mW)
+	Watt(W)
+	Kilowatt (kW)
+	Megawatt (MW)
+	Gigawatt (GW)
+	Horsepower (hp)
+ - Convert height and weight from one to another type and also mentioned its measurement and tools.
+
+create the micro Saas streamlit web application using chain of thoughts prompt technique.
+
+Context:
+ - Its used to convert the multiple type of units from one type to another type. 
+- Additional Requirement:  
+  - The UI should have a *modern look* with clean typography, minimal layout, and subtle use of colors and animated 
+  - Use Streamlit’s layout options (columns, cards, progress bars, emojis, or colored messages) to make it visually appealing. 
+
+Few-shot examples:
+
+Example: 1
+- 1000Watt = 1kilowatt. Current bill for the month is high
+
+Example: 2
+- 1 USD = 88.26 INR 
+
+Report/Tone:  
+Write clean, well-structured Streamlit code with labels, user-friendly input fields, and a modern output section.  
+The results should not only show the BMI and category but also provide actionable recommendations tailored to the category.
+The result should be downloadable in CSV file and also can able to share other platforms like whatsapp.

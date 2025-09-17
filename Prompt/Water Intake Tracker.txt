@@ -1,0 +1,84 @@
+Role
+
+You are an expert Python Streamlit developer who builds colorful, user-friendly health apps with Plotly charts, animated components, secure login, and Twilio WhatsApp reminders.
+-----------------------------------------------------------------------------------------------------------------------------------------
+Task
+Build a Streamlit hydration tracker web app with:
+Patient sign-up/login (username, password, mobile number with country code) and auto-redirect to the dashboard after login.
+Dashboard: input daily water (liters), Undo last addition, pie/donut charts, an animated water bottle that fills based on the “Consumed” pie slice, climate selection and tips, motivational quotes shown after each successful addition, and a WhatsApp reminder button when users are behind their goal.
+Reports: weekly charts and a daily report download (text).
+Admin console (role-based access): view/update users, edit any date’s intake (set/increase/decrease/delete), generate per-user date-range reports, and bulk export all users’ data to CSV.
+Design: different and creative colors for text and UI, friendly emojis, supportive tone, and animated visuals.
+Tech stack and persistence:
+Streamlit, Plotly, bcrypt, Twilio, streamlit-lottie, requests, pandas.
+Store data in a local JSON file (users_db.json), including users, hashed passwords, phone, goal, climate, role, and daily history.
+Read Twilio WhatsApp credentials from .streamlit/secrets.toml; guard the reminder button if secrets are missing.
+Implementation notes:
+Passwords hashed with bcrypt.
+Animated bottle fill equals Consumed/Goal (0–100%). If intake > goal, show a +X% badge but keep bottle at 100%.
+Show a motivational quote after each successful addition; hide/reset it on Undo.
+Undo only removes the most recent additions made in the current session (session stack).
+For the bottle’s HTML/JS block, avoid Python f-strings with curly braces; use placeholder replacement to prevent brace-escaping syntax errors.
+---------------------------------------------------------------------------------------------------------------------------------------------------
+Context
+As a doctor, I want to help patients stay hydrated. Many forget to drink enough water; a tracker and cheerful reminders can improve adherence.
+The app should be accountability-friendly and motivational, with:
+Creative, colorful UI and emojis.
+A donut pie chart showing Consumed, Remaining, and Over vs. a daily goal (liters).
+An animated water bottle that visibly fills as patients add liters.
+Climate awareness: users choose their climate, and the dashboard shows a short tip.
+WhatsApp reminders to nudge patients when they are below their daily target.
+Admin tools to manage patients’ entries and export reports.
+------------------------------------------------------------------------------------------------------------------------------------------------------
+Few-Shots
+
+Example 1
+
+Input: “1.2 L today”
+Output: Pie shows 40% of a 3.0 L goal (Consumed 1.2 L, Remaining 1.8 L). Animated bottle fills to 40%. Message: “💧 Good start! Try sipping a glass of water every hour to stay refreshed.” Weekly chart updates with today’s entry.
+Example 2
+
+Input: “3.0 L today”
+Output: Pie shows 100% consumed. Animated bottle at 100% (no over badge). Message: “🎉 Great job! You’ve hit your hydration goal today. Keep it up!” Charts reflect intake.
+Example 3
+
+Input: “3.8 L today”
+Output: Pie: Consumed 3.0 L, Over 0.8 L; center shows 125% (cap). Animated bottle stays at 100% with a pulsing “+27%” badge. Message: “🚰 Excellent! You’re well-hydrated. Remember, balance is key—no need to overdo it.”
+Example 4 (Undo)
+
+Input: “Undo last 0.25 L”
+Output: Today’s total decreases by 0.25 L. Pie and bottle decrease accordingly. No motivational quote on undo.
+Example 5 (Admin edit)
+
+Input: “Admin sets 2.2 L for 2025-03-10 for user ‘alex’”
+Output: User ‘alex’ history for 2025-03-10 becomes 2.2 L. Reports and charts reflect the new value. Admin can download CSV/TXT for the selected date range.
+----------------------------------------------------------------------------------------------------------------------------------------------------------------
+Report/Tone
+Daily Hydration Report (end of day):
+Include:
+Date
+User
+Climate
+Daily intake (liters)
+Goal (liters)
+Progress (%) capped at 125%
+Motivational summary based on intake vs. goal
+Weekly on-target days count
+Provide as a downloadable .txt file from the Reports page.
+-----------------------------------------------------------------------------------------------------------------------
+Tone:
+Friendly, supportive, and health-positive—like a wellness coach.
+Use emojis and uplifting feedback.
+Encourage without guilt-tripping; focus on positive reinforcement.
+Show a short motivational quote whenever water is successfully added and the bottle increases.
+-----------------------------------------------------------------------------------------------------------------------
+Acceptance criteria:
+Users can sign up, log in, and are redirected to the dashboard.
+Dashboard supports adding water, shows a motivational quote after each addition, and provides Undo for the last additions in the session.
+Donut pie segments: Consumed = min(intake, goal), Remaining = max(goal - intake, 0), Over = max(intake - goal, 0).
+Animated bottle fill equals the Consumed percentage (0–100%) with a +X% badge for Over.
+Climate selection with a concise tip on the dashboard.
+WhatsApp reminder button appears only when below goal, opted-in, and Twilio secrets are present; otherwise, it’s hidden or replaced with an info note.
+Reports page includes weekly visuals and a downloadable daily report text.
+Admin console allows managing users, editing entries per date, generating per-user date-range reports, and exporting all data to CSV.
+UI uses creative colors, gradients, and emojis; messages are supportive and upbeat.
