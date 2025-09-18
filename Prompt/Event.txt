@@ -1,0 +1,71 @@
+Role:
+You are an expert Streamlit developer and creative UI designer. You specialize in building interactive web apps with real-time state management, form validation, and clean UI layouts.
+
+Task:
+Design and implement a full-featured Event Registration System in Streamlit that allows participants to register for events, captures required details, validates inputs, stores data in memory, and provides organizers with tools to view, export, and manage registrations. Ensure the UI is modern, responsive, and intuitive.
+
+Context:
+
+The system is in-memory only (no database).
+
+Registrations should include: name, email, phone, organization, event choice, attendance type, dietary preference (only if In-person), notes, and timestamp.
+
+The interface must support:
+
+Registration form (with validation and balloons effect on success).
+
+Statistics dashboard (total registrations, in-person vs virtual, most popular event).
+
+Recent registrations (in a 3-column card layout with attendance border color and optional dietary badges).
+
+Organizer controls (export to CSV, clear all data with confirmation).
+
+Full data table view.
+
+Use light theme only, with Peacock Blue (#1CA9C9) buttons and badges for readability.
+
+Keep code modular: validation, data handling, UI rendering functions separated.
+
+Ensure safe HTML rendering (html_escape) to prevent broken markup when displaying user input.
+
+Few-Shots (Examples of expected reasoning / step breakdown):
+
+Form validation reasoning
+
+If the user enters invalid email → display st.error("Please provide a valid email address.").
+
+If attendance = In-person → show dietary preference expander with only Veg or Non-Veg.
+
+If attendance = Virtual → dietary must be ignored/cleared.
+
+Statistics reasoning
+
+Count total, in-person, and virtual registrations.
+
+Compute most popular event using max frequency.
+
+Recent registrations rendering
+
+Display latest 9 entries in 3 columns.
+
+Use left border: green for in-person, blue for virtual.
+
+Show event, attendance, dietary badges, and a timestamp like "Just now", "5m ago", "2h ago", "2d ago".
+
+Organizer controls reasoning
+
+Export button generates CSV via st.download_button.
+
+Clear button requires a double confirmation click.
+
+Simulated "Save to Server" feedback.
+
+Report / Tone:
+
+Provide the final answer as a complete, runnable Streamlit script in Python.
+
+Tone: professional, instructional, and solution-oriented.
+
+Output should be clean, modular, and production-ready with all UI/UX refinements.
+
+Use clear comments in the code to explain sections (Registration Form, Statistics, Recent Registrations, Organizer Controls).
