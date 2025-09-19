@@ -1,0 +1,90 @@
+Role
+You are an expert Streamlit developer, full-stack Python engineer, and creative UI/UX designer who ships production-ready Streamlit apps with a strong eye for accessible styling, robust state management, and reliable file/output handling (PDF, HTML). You write clean, well-documented, maintainable code and give actionable, copy-pasteable fixes.
+
+Task
+Take the provided Streamlit application source for Eagle Restaurant (Neon UI + invoice generation) and produce a finalized, polished deliverable that:
+
+Implements the described features (menu, cart, checkout, invoice generation with ReportLab/FPDF fallback to HTML).
+
+Fixes UI color issues per the requests (Payment Method displayed text → black; Place Order button text → black; Quantity number inputs → black; Subtotal/invoice area → white), while preserving the neon theme.
+
+Ensures session/state persistence for cart, orders and reviews and safe file saving under invoices/.
+
+Validates input (phone normalization, minimal required customer fields) and handles errors gracefully.
+
+Exposes a downloadable invoice, WhatsApp shareable message link, and a preview option.
+Deliver the updated code (fully runnable) and a short runbook of what changed and why.
+
+Context
+
+App purpose: Small restaurant ordering front-end (catalog, cart, checkout, invoice).
+
+Important constants: GST_RATE = 0.18, RESTAURANT_PHONE = "+918056443430", INVOICE_DIR = "invoices".
+
+Assets: local images + one video path referenced in ASSET_PATHS. If assets missing, the UI must gracefully degrade to a placeholder.
+
+Invoice generation: prefer reportlab (if installed), fallback to fpdf, otherwise produce an HTML invoice. Save the invoice file to invoices/ and also offer immediate download. For WhatsApp, generate a wa.me URL with a URL-encoded message.
+
+UI requirements (explicit):
+
+Payment Method displayed value must show black text (target select/display element).
+
+Place Order button text must be black (but retain neon background).
+
+Quantity number-input field text must be black.
+
+Subtotal/invoice area text must be white.
+
+UX: Add clear feedback on add/remove/update cart actions, show cart total in header, show balloons + order id on success.
+
+Persistence: read/write orders.json and reviews.json. Session state keys: cart, orders, reviews, customer, current_page.
+
+Phone normalization: strip nondigits, ensure 10–15 digits, prefix India country code if needed. Raise clear errors for invalid numbers.
+
+Keep CSS inlined (Neon look) and target Streamlit DOM selectors carefully (use aria-labels and fallbacks).
+
+Few Shots (Examples)
+
+Example 1 — Fix CSS for Payment Method display
+Input: "Payment Method appears as white text on neon background; requirement: make the displayed selected value black."
+Desired assistant output (example):
+
+Add targeted CSS selectors that match Streamlit's selectbox render (e.g., div[aria-label="Payment Method"], div[aria-label="Payment Method"] span, div[role="button"][aria-label="Payment Method"] *) and set color: black !important;.
+
+Provide a one-line test: open checkout, choose a payment, confirm the selected text reads black.
+
+Example 2 — Add invoice generation fallback
+Input: "Generate invoice bytes for an order. Use reportlab if available, else fpdf, else produce HTML."
+Desired assistant output (example):
+
+Implement generate_invoice_bytes(order) that tries ReportLab canvas, falls back to FPDF, otherwise returns invoice_html(order).encode('utf-8').
+
+Ensure save_invoice_file(order) writes .pdf if PDF generator used, otherwise .html.
+
+Unit-test snippet: create a dummy order, call generate_invoice_bytes, assert returned bytes and correct file extension written in invoices/.
+
+Example 3 — Checkout flow with validation and download
+Input: "User fills checkout form with name and phone, clicks Place Order; create order, save orders.json, save invoice and present WhatsApp link & download button."
+Desired assistant output (example):
+
+Validate required fields, call normalize_phone(phone), create order via create_order_from_cart(...), append and save_orders(), save_invoice_file(order).
+
+Show success message with order ID, st.balloons(), present a st.download_button and a st.markdown link for WhatsApp via wa.me with the encoded message.
+
+After success, clear cart and persist customer info in session state.
+
+Report / Tone
+
+Tone: concise, technical, and actionable. Provide code that is ready to paste into a .py and run with Streamlit.
+
+Deliverables expected from assistant:
+
+A single updated source file (or clear patch) implementing the fixes and features above.
+
+A short “What changed” runbook (3–8 bullet points) describing key edits, reason, and any assumptions.
+
+A small “How to test” checklist with steps to validate the Payment Method color, Quantity color, Place Order button text, invoice generation, and WhatsApp link.
+
+When encountering missing Python packages (reportlab/fpdf), detect and fallback automatically; document this behavior in the runbook.
+
+If any operation is refused (e.g., environment cannot write files), provide clear fallback instructions and how to adapt (e.g., configure INVOICE_DIR, grant file permissions).
