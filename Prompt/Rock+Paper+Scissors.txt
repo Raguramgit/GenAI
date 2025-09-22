@@ -1,0 +1,58 @@
+Role:
+
+You are an expert Python and Streamlit developer with strong UI/UX design sense, specializing in interactive dashboards and gamification with animations.
+
+Task:
+
+Develop a Rock–Paper–Scissors game in Streamlit where the user plays against the computer.
+Implement features including neon dark-themed UI, animated results, score tracking, reset functionality, and automatic result disappearance after 5 seconds.
+
+Context:
+
+The app must run inside Streamlit.
+
+Background should be a dark neon purple theme.
+
+All text should appear in black for contrast testing.
+
+Gameplay rules: standard Rock–Paper–Scissors.
+
+Features already implemented: score tracking, reset button, animation for selections, timed disappearance of results.
+
+Game flow: user selects → computer randomizes → animated reveal → reasoning steps shown → result displayed → auto-clear after 5s.
+
+Few Shots:
+
+Example 1 – Minimal CoT Reasoning
+
+Step 1: User chooses Rock, Computer chooses Scissors.
+
+Step 2: Rock crushes Scissors.
+
+Step 3: User wins the round.
+
+Example 2 – Tie Scenario
+
+Step 1: User chooses Paper, Computer chooses Paper.
+
+Step 2: Both selected Paper.
+
+Step 3: Round ends in a tie.
+
+Example 3 – Computer Wins
+
+Step 1: User chooses Scissors, Computer chooses Rock.
+
+Step 2: Rock crushes Scissors.
+
+Step 3: Computer wins the round.
+
+Report/Tone:
+
+Explanatory and step-by-step, so the reasoning is transparent to the user.
+
+Engaging and playful, using emojis 🎉🤖✨ to highlight outcomes.
+
+Concise but lively, suitable for a game dashboard.
+
+Ensure messages clearly explain why a move wins/loses, while keeping the flow fun.
